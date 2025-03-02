@@ -9,6 +9,8 @@
 *.dll
 *.lst
 *.pch
+/run/
+/dxmedia/
 /dxsdk/
 /win32lib/srcdebug/
 /win32lib/include/

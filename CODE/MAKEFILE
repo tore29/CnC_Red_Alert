@@ -506,12 +506,13 @@ game.dat: $(WWOBJ)\tech.lib $(WWOBJ)\jshell.lib $(OBJECTS) $(LINKFILE) $(TECHFIL
 #	-copy ..\run\game.dat ..\cd\install
 	-Echo "game.dat" executable completed.
 
-ra95.exe: $(WWOBJ)\tech.lib $(WWOBJ)\jshell.lib $(OBJECTS) $(LINKFILE) mpgdll.lib
+#ra95.exe: $(WWOBJ)\tech.lib $(WWOBJ)\jshell.lib $(OBJECTS) $(LINKFILE) mpgdll.lib
+ra95.exe: $(WWOBJ)\tech.lib $(WWOBJ)\jshell.lib $(OBJECTS) $(LINKFILE)
 	Echo "ra95.exe" linking phase. [$(LANGUAGE)]
 #         nwlink name ..\run\$@ @$(LINKFILE)
 # ajw - Steve Tall replaced wlink with nwlink. Watcom fix allows more debug symbols in exe, so allows debugging in WD.
 #        ..\watcom\binw\wlink name ..\run\$@ @$(LINKFILE)
-        linker\nwlink name ..\run\$@ @$(LINKFILE)
+        nwlink name ..\run\$@ @$(LINKFILE)
 #        ..\watcom\binnt\WRC cc_icon ..\run\$@
 #        copy ..\run\ra95.exe C:\westwood\redalert
 #        copy ..\run\ra95.exe C:\westwood\ra
@@ -558,12 +559,12 @@ win95.lnk : makefile
 	%append $^@ library $(WWFLAT)\lib\win32lib.lib
 	%append $^@ library ..\winvq\lib\vqa32wp.lib
 	%append $^@ library ..\winvq\lib\vqm32wp.lib
-     	%append $^@ library ipx\wwipx32.lib
+    %append $^@ library ..\ipx\wwipx32.lib
 	%append $^@ library ..\dxsdk\lib\dxguid.lib
 	%append $^@ library ..\dxsdk\lib\ddraw.lib
 	%append $^@ library ..\dxsdk\lib\dsound.lib
 	%append $^@ library $(WWFLAT)\lib\keyboard.lib
-	%append $^@ library mpgdll.lib
+#	%append $^@ library mpgdll.lib
 	%append $^@ library ..\dxmedia\lib\amstrmid.lib
 	%append $^@ library ..\dxmedia\lib\strmbasd.lib
 #	%append $^@ library ..\watcom\lib386\nt\uuid.lib

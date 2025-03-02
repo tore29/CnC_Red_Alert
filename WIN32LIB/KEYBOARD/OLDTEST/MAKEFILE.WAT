@@ -34,7 +34,7 @@
 #*                                                                         *
 #* Required environment variables:					   								*
 #* WIN32LIB		= your root WWFLAT path					   							*
-#* WIN32VCS		= root directory for wwlib version control archive	   		*
+
 #* COMPILER		= your Watcom installation path				   					*
 #*                                                                         *
 #*									   															*
@@ -57,9 +57,6 @@
 !error WIN32LIB Environment var not configured.
 !endif
 
-!ifndef WIN32VCS  
-!error WIN32VCS Environment var not configured.
-!endif
 
 !ifndef COMPILER
 !error COMPILER Environment var not configured.

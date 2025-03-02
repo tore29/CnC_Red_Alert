@@ -33,7 +33,6 @@
 #*                                                                         *
 #* Required environment variables:					   								*
 #* WIN32LIB		= your root WWFLAT path					   							*
-#* WIN32VCS		= root directory for wwlib version control archive	   		*
 #* COMPILER		= your Watcom installation path				   					*
 #*									   															*
 #* Required changes to makefile:					   									*
@@ -54,12 +53,6 @@
 WIN32LIB=.
 !else
 WIN32LIB=$(%WIN32LIB)
-!endif
-
-!ifndef %WIN32VCS
-WIN32VCS=.
-!else
-WIN32VCS=$(%WIN32VCS)
 !endif
 
 
